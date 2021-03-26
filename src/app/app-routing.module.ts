@@ -5,9 +5,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-{ path: 'auth/login', component: LoginComponent },
-{path:'auth/register',component:RegisterComponent},
-{ path: '**', component: PagenotfoundComponent }
+  { path: '',redirectTo: 'auth/login',pathMatch:'full'},
+  { path: 'auth/login', component: LoginComponent },
+  { path: 'auth/register', component: RegisterComponent },
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({
@@ -15,8 +16,8 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-export const myComponents=[
+export const myComponents = [
   LoginComponent,
   RegisterComponent,
-  PagenotfoundComponent
-]
+  PagenotfoundComponent,
+];

@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,7 +11,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private _fromBuilder: FormBuilder) {
+  constructor(
+    private _fromBuilder: FormBuilder,
+    private _userService: UserService,
+    private _router:Router
+  ) {
     this.registerForm = this._fromBuilder.group({
       name: ['', Validators.required],
       email: [
@@ -28,6 +34,20 @@ export class RegisterComponent implements OnInit {
   RegisterUser() {
     if (this.registerForm.valid) {
       alert('Valid');
+
+      this._userService.registerUser({
+        name: this.registerForm.get('name')?.value,
+        email: this.registerForm.get('email')?.value,
+        password: this.registerForm.get('password')?.value,
+        email_verified_at: new Date(),
+        created_at: new Date(),
+        updated_at: new Date(),
+        api_token: '',
+      }).subscribe();
+
+      this._router.navigate(['/auth/login']);
+
+
     } else {
       Object.keys(this.registerForm.controls).forEach((field) => {
         const mycontrol = this.registerForm.get(field);
