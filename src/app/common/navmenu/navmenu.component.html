@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md bg-primary navbar-dark  mb-4">
+
+    <a class="navbar-brand" href="/">Edureka FoodOrb</a>
+    <!-- <button
+  class="navbar-toggler"
+  type="button"
+  data-toggle="collapse"
+  data-target="#navbarCollapse"
+  aria-controls="navbarCollapse"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+  <span class="navbar-toggler-icon"></span>
+</button> -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li *ngIf="authStatus != ''" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/friends">Friends</a>
+            </li>
+            <li *ngIf="authStatus != ''" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/users">Users</a>
+            </li>
+            <li *ngIf="authStatus != ''" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/orders">Orders</a>
+            </li>
+        </ul>
+        <div class="mt-2 mt-md-0">
+            <ul class="navbar-nav mr-auto">
+                <li *ngIf="authStatus == ''" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/auth/register">Register</a>
+                </li>
+                <li *ngIf="authStatus == ''" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/auth/login">Login</a>
+                </li>
+                <li *ngIf="authStatus != ''" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/settings">Settings</a>
+                </li>
+                <li *ngIf="authStatus != ''" class="nav-item">
+                    <form (ngSubmit)="logout()">
+                        <button type="submit" class="btn btn-secondary">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
