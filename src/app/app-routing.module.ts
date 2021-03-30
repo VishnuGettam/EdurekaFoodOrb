@@ -3,9 +3,11 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ForgotpasswordComponent } from './auth/forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   { path: '',redirectTo: 'auth/login',pathMatch:'full'},
+  {path:'auth/forgotpassword',component:ForgotpasswordComponent},
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
   { path: '**', component: PagenotfoundComponent },
@@ -20,4 +22,5 @@ export const myComponents = [
   LoginComponent,
   RegisterComponent,
   PagenotfoundComponent,
+  ForgotpasswordComponent
 ];

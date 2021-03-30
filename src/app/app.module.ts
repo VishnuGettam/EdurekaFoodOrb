@@ -10,6 +10,7 @@ import { NavmenuComponent } from './common/navmenu/navmenu.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

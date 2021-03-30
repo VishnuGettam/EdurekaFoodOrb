@@ -1,5 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private _fromBuilder: FormBuilder) {
+  constructor(private _fromBuilder: FormBuilder, private _router:Router) {
     this.loginForm = this._fromBuilder.group({
       email: [
         '',
@@ -23,6 +24,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  forgotPassword(){
+      this._router.navigate(['auth/forgotpassword']);
+
+  }
 
   LoginUser() {
     if (this.loginForm.valid) {
