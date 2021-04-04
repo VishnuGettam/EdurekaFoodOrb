@@ -1,3 +1,4 @@
+import { UserfeedComponent } from './userfeed/userfeed.component';
 import { PagenotfoundComponent } from './common/pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -6,10 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ForgotpasswordComponent } from './auth/forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
-  { path: '',redirectTo: 'auth/login',pathMatch:'full'},
+  { path: '',redirectTo: '/userfeed',pathMatch:'full'},
   {path:'auth/forgotpassword',component:ForgotpasswordComponent},
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
+  {path:'userfeed',component:UserfeedComponent},
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -22,5 +24,6 @@ export const myComponents = [
   LoginComponent,
   RegisterComponent,
   PagenotfoundComponent,
-  ForgotpasswordComponent
+  ForgotpasswordComponent,
+  UserfeedComponent
 ];

@@ -1,0 +1,56 @@
+[{
+        "id": 1,
+        "created_at": "2020-04-26T17:08:41.000000Z",
+        "updated_at": "2020-04-26T17:08:41.000000Z",
+        "restaurent_name": "Hyderabad Chicken Biryani House",
+        "rating": "4.0",
+        "description": "Indian",
+        "name": "Hyderabad Chicken Dum Biryani",
+        "image_url": "./assets/images/biryani.jpg",
+        "cost": "290"
+    },
+    {
+        "id": 2,
+        "created_at": "2020-04-26T17:08:41.000000Z",
+        "updated_at": "2020-04-26T17:08:41.000000Z",
+        "restaurent_name": "Pizza House",
+        "rating": "3.8",
+        "description": "Chinese",
+        "name": "Indian Pizza",
+        "image_url": "./assets/images/pizza.jpg",
+        "cost": "250"
+    },
+    {
+        "id": 3,
+        "created_at": "2020-04-26T17:08:41.000000Z",
+        "updated_at": "2020-04-26T17:08:41.000000Z",
+        "restaurent_name": "Bangalore Donot King",
+        "rating": "3.8",
+        "description": "Indian",
+        "name": "Donots",
+        "image_url": "./assets/images/donot.jpg",
+        "cost": "100"
+    },
+    {
+        "id": 4,
+        "created_at": "2020-04-26T17:08:41.000000Z",
+        "updated_at": "2020-04-26T17:08:41.000000Z",
+        "restaurent_name": "Vishnu Restaurant",
+        "rating": "3.8",
+        "description": "Indian",
+        "name": "vishnu group of Hotels",
+        "image_url": "./assets/images/vishnuhotel.jpg",
+        "cost": "650"
+    },
+    {
+        "id": 5,
+        "created_at": "2020-04-26T17:08:41.000000Z",
+        "updated_at": "2020-04-26T17:08:41.000000Z",
+        "restaurent_name": "Divya Chicken House",
+        "rating": "3.8",
+        "description": "Indian",
+        "name": "Divya Chicken House",
+        "image_url": "./assets/images/divyachicken.png",
+        "cost": "190"
+    }
+]

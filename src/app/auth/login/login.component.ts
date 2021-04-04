@@ -1,6 +1,7 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthorizeService } from 'src/app/services/authorize.service';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
-  constructor(private _fromBuilder: FormBuilder, private _router:Router) {
+  authStatus: any = JSON.parse(localStorage.getItem('authStatus') || '{}');
+  constructor(private _fromBuilder: FormBuilder, private _router:Router,private _authService:AuthorizeService) {
     this.loginForm = this._fromBuilder.group({
       email: [
         '',
@@ -32,7 +33,13 @@ export class LoginComponent implements OnInit {
 
   LoginUser() {
     if (this.loginForm.valid) {
-      alert('Login Valid')
+
+      var email = this.loginForm.get('email')?.value;
+      var password = this.loginForm.get('password')?.value;
+      this._authService.login(email,password);
+      this._router.navigate(['/userfeed']);
+
+
     } else {
       Object.keys(this.loginForm.controls).forEach((field) => {
         const userControl = this.loginForm.get(field);

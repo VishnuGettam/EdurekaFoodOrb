@@ -1,7 +1,8 @@
+import { SearchpipePipe } from './pipes/searchpipe.pipe';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, myComponents } from './app-routing.module';
@@ -11,17 +12,22 @@ import { NavmenuComponent } from './common/navmenu/navmenu.component';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavmenuComponent,
-    myComponents
+    myComponents,
+    SearchpipePipe
+
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
