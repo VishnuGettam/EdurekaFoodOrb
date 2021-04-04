@@ -8,6 +8,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, myComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavmenuComponent } from './common/navmenu/navmenu.component';
+import { SettingsComponent } from './settings/settings.component';
+import { UserlistComponent } from './users/userlist/userlist.component';
+import { UserdetailsComponent } from './users/userdetails/userdetails.component';
+import { OrderlistComponent } from './orderlist/orderlist.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+
 
 
 
@@ -19,7 +25,12 @@ import { NavmenuComponent } from './common/navmenu/navmenu.component';
     AppComponent,
     NavmenuComponent,
     myComponents,
-    SearchpipePipe
+    SearchpipePipe,
+    SettingsComponent,
+    UserlistComponent,
+    UserdetailsComponent,
+    OrderlistComponent,
+    OrderdetailsComponent
 
     ],
   imports: [

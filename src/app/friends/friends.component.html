@@ -1,0 +1,26 @@
+<div *ngIf="authStatus['status']; else loggedOutBlock" class="jumbotron">
+    <div class="container">
+        <p class="h2 mb-3">User friends</p>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row mb-4" *ngFor="let friend of friends">
+            <div class="card flex-row flex-wrap w-100">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/150" alt="" />
+                </div>
+                <div class="card-body" style="width: 18rem">
+                    <h4 class="card-title">{{ friend.name }}</h4>
+                    <p class="card-text">{{ friend.email }}</p>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loggedOutBlock>
+    <div class="jumbotron">
+        <h5>Please login or register to access the app.</h5>
+    </div>
+</ng-template>

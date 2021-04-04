@@ -1,0 +1,27 @@
+<div *ngIf="authStatus['status']; else loggedOutBlock" class="jumbotron">
+    <div class="container">
+        <p class="h2 mb-3">Users</p>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row mb-4" *ngFor="let user of users">
+            <div class="card flex-row flex-wrap w-100">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/150" alt="" />
+                </div>
+                <div class="card-body" style="width: 18rem">
+                    <h4 class="card-title">{{ user.name }}</h4>
+                    <p class="card-text">{{ user.email }}</p>
+                    <a class="btn btn-primary" routerLink="/users/{{ user.id }}" role="button">View</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loggedOutBlock>
+  <div class="jumbotron">
+    <h5>Please login or register to access the app.</h5>
+  </div>
+</ng-template>

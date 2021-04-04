@@ -1,3 +1,7 @@
+import { UserdetailsComponent } from './users/userdetails/userdetails.component';
+import { UserlistComponent } from './users/userlist/userlist.component';
+import { FriendsComponent } from './friends/friends.component';
+import { SettingsComponent } from './settings/settings.component';
 import { UserfeedComponent } from './userfeed/userfeed.component';
 import { PagenotfoundComponent } from './common/pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -11,7 +15,11 @@ const routes: Routes = [
   {path:'auth/forgotpassword',component:ForgotpasswordComponent},
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
+  {path:'settings',component:SettingsComponent},
+  {path:'friends',component:FriendsComponent},
   {path:'userfeed',component:UserfeedComponent},
+  {path:'users',component:UserlistComponent},
+  {path:'users/:id',component:UserdetailsComponent},
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -25,5 +33,7 @@ export const myComponents = [
   RegisterComponent,
   PagenotfoundComponent,
   ForgotpasswordComponent,
-  UserfeedComponent
+  UserfeedComponent,
+  FriendsComponent,
+  UserlistComponent
 ];

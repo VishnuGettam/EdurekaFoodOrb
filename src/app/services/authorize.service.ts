@@ -30,7 +30,7 @@ export class AuthorizeService {
   }
 
   isloggedIn() {
-    let status: string = localStorage.getItem('authStatus') || '';
+    let status: string = sessionStorage.getItem('authStatus') || '';
     if (status != '' && JSON.parse(status)['status']) {
       return true;
     } else {

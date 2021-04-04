@@ -10,7 +10,7 @@ import { AuthorizeService } from 'src/app/services/authorize.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  authStatus: any = JSON.parse(localStorage.getItem('authStatus') || '{}');
+  authStatus: any = JSON.parse(sessionStorage.getItem('authStatus') || '{}');
   constructor(private _fromBuilder: FormBuilder, private _router:Router,private _authService:AuthorizeService) {
     this.loginForm = this._fromBuilder.group({
       email: [
