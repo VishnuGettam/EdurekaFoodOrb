@@ -1,9 +1,9 @@
 <div *ngIf="authStatus['status']; else loggedOutBlock" class="jumbotron">
     <div class="container">
-        <h1 class="display-4">Hello {{ authStatus["name"] }}!</h1>
-        <p class="h2 mb-3">Order food from your favourite restaurants near you.</p>
+        <h1 class="display-4 text-light bg-dark">Hello {{ authStatus["name"] }}!</h1>
+        <p class="h2 mb-3 text-info">Order food from your favourite restaurants near you.</p>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" name="query" placeholder="Subway" [(ngModel)]="query" />
+            <input class="form-control mr-sm-2" type="search" name="query" placeholder="Biryani House" [(ngModel)]="query" />
         </form>
     </div>
 
@@ -13,8 +13,8 @@
     <div class="container">
         <div class="row mb-4" *ngFor="let row of useritems">
             <div class="col" *ngFor="let col of row | searchpipe: query">
-                <div class="card" style="width: 18rem">
-                    <img class="card-img-top" src="{{ col.image_url }}" />
+                <div class="card" style="width: 18rem;cursor: pointer; " (click)="RestaurentDetails(col.id)">
+                    <img class="card-img-top" style="width: 200px;height: 200px;" src="{{ col.image_url }}" />
                     <div class="card-body">
                         <div class="row">
                             <div class="col">{{ col.restaurent_name }}</div>

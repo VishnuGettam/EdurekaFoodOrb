@@ -1,3 +1,4 @@
+import { UserfeedDetailsComponent } from './userfeed/userfeedDetails/userfeed-details/userfeed-details.component';
 import { UserdetailsComponent } from './users/userdetails/userdetails.component';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { FriendsComponent } from './friends/friends.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'settings',component:SettingsComponent},
   {path:'friends',component:FriendsComponent},
   {path:'userfeed',component:UserfeedComponent},
+  {path:'userfeed/:id',component:UserfeedDetailsComponent},
   {path:'users',component:UserlistComponent},
   {path:'users/:id',component:UserdetailsComponent},
   {path:'orders',component:OrderlistComponent},
@@ -43,5 +45,6 @@ export const myComponents = [
   UserlistComponent,
   UserdetailsComponent,
   OrderlistComponent,
-  OrderdetailsComponent
+  OrderdetailsComponent,
+  UserfeedDetailsComponent
 ];

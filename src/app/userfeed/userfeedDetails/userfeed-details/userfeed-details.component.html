@@ -1,0 +1,28 @@
+<div *ngIf="authStatus['status']; else loggedOutBlock" class="jumbotron">
+    <div class="card flex-row flex-wrap w-100">
+        <div class="card-header">
+            <!-- <img src="https://via.placeholder.com/150" alt="" /> -->
+            <h4 class="card-title"> {{ userfeed.restaurent_name }} </h4>
+            <img class="card-img-top" style="width: 150px;height: 150px;" src="{{ userfeed.image_url }}" />
+        </div>
+        <div class="card-body" style="width: 18rem">
+            <h5 class="card-title"> {{ userfeed.name }} </h5>
+            <p class="card-text">Quantity: 1</p>
+            <p class="card-text">Amount: {{userfeed.cost | currency:'INR' }} </p>
+            <button class="btn-primary" (click)="addtoCart()">Add to Cart</button>
+        </div>
+
+    </div>
+    <br>
+    <div class="float-right">
+        <button class="btn-secondary" (click)="GotoUserFeed()">
+    back
+  </button>
+    </div>
+</div>
+
+<ng-template #loggedOutBlock>
+    <div class="jumbotron">
+        <h5>Please login or register to access the app.</h5>
+    </div>
+</ng-template>
