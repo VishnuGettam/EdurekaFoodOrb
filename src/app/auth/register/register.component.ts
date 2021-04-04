@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _fromBuilder: FormBuilder,
     private _userService: UserService,
-    private _router:Router
+    private _router: Router
   ) {
     this.registerForm = this._fromBuilder.group({
       name: ['', Validators.required],
@@ -33,19 +33,32 @@ export class RegisterComponent implements OnInit {
 
   RegisterUser() {
     if (this.registerForm.valid) {
-      alert('Valid');
 
-      this._userService.registerUser({
-        name: this.registerForm.get('name')?.value,
-        email: this.registerForm.get('email')?.value,
-        password: this.registerForm.get('password')?.value,
-        email_verified_at: new Date(),
-        created_at: new Date(),
-        updated_at: new Date(),
-        api_token: '',
-      }).subscribe();
 
-      this._router.navigate(['/auth/login']);
+      this._userService
+        .getUserbyEmail(this.registerForm.get('email')?.value)
+        .subscribe((userData) => {
+          console.log(userData[0].email);
+          if (userData[0].email == this.registerForm.get('email')?.value) {
+            alert('Please use another Email address');
+
+          }
+         else {
+            this._userService
+            .registerUser({
+              name: this.registerForm.get('name')?.value,
+              email: this.registerForm.get('email')?.value,
+              password: this.registerForm.get('password')?.value,
+              email_verified_at: new Date(),
+              created_at: new Date(),
+              updated_at: new Date(),
+              api_token: '',
+            })
+            .subscribe();
+
+          this._router.navigate(['/auth/login']);
+          }
+        });
 
 
     } else {

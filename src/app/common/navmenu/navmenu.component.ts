@@ -17,7 +17,6 @@ export class NavmenuComponent implements OnInit, DoCheck {
 
   logout() {
     sessionStorage.removeItem('authStatus');
-
     window.location.href = window.location.href;
   }
 }

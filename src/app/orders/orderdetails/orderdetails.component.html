@@ -1,0 +1,18 @@
+<div *ngIf="authStatus['status']; else loggedOutBlock" class="jumbotron">
+    <div class="card flex-row flex-wrap w-100">
+        <div class="card-header">
+            <img src="https://via.placeholder.com/150" alt="" />
+        </div>
+        <div class="card-body" style="width: 18rem">
+            <h4 class="card-title">Listing ID: {{ order.listing_id }}</h4>
+            <p class="card-text">Quantity: {{ order.quantity }}</p>
+            <p class="card-text">Amount: {{ order.amount }}</p>
+        </div>
+    </div>
+</div>
+
+<ng-template #loggedOutBlock>
+    <div class="jumbotron">
+        <h5>Please login or register to access the app.</h5>
+    </div>
+</ng-template>

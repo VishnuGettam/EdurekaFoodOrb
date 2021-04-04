@@ -9,6 +9,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgotpasswordComponent } from './auth/forgotpassword/forgotpassword.component';
+import { OrderlistComponent } from './orders/orderlist/orderlist.component';
+import { OrderdetailsComponent } from './orders/orderdetails/orderdetails.component';
+
 
 const routes: Routes = [
   { path: '',redirectTo: '/userfeed',pathMatch:'full'},
@@ -20,6 +23,8 @@ const routes: Routes = [
   {path:'userfeed',component:UserfeedComponent},
   {path:'users',component:UserlistComponent},
   {path:'users/:id',component:UserdetailsComponent},
+  {path:'orders',component:OrderlistComponent},
+  {path:'orders/:id',component:OrderdetailsComponent},
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -35,5 +40,8 @@ export const myComponents = [
   ForgotpasswordComponent,
   UserfeedComponent,
   FriendsComponent,
-  UserlistComponent
+  UserlistComponent,
+  UserdetailsComponent,
+  OrderlistComponent,
+  OrderdetailsComponent
 ];
