@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
   authStatus: any = JSON.parse(sessionStorage.getItem('authStatus') || '{}');
   user: any = {};
+  edit:boolean = false;
   constructor(private _userService:UserService) { }
 
   ngOnInit(): void {
@@ -17,4 +18,10 @@ export class SettingsComponent implements OnInit {
     });
   }
 
+  EditProfile(id:number){
+      this.edit = true;
+  }
+  UpdateProfile(id:number){
+
+  }
 }

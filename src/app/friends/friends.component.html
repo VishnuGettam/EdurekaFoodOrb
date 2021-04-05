@@ -12,11 +12,30 @@
                 <div class="card-body" style="width: 18rem">
                     <h4 class="card-title">{{ friend.name }}</h4>
                     <p class="card-text">{{ friend.email }}</p>
+                    <!-- <button type="button" class="btn btn-primary">Add</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <p class="h2 mb-3">Find friends</p>
+    </div>
+    <div class="container">
+        <div class="row mb-4" *ngFor="let user of users">
+            <div class="card flex-row flex-wrap w-100">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/150" alt="" />
+                </div>
+                <div class="card-body" style="width: 18rem">
+                    <h4 class="card-title">{{ user.name }}</h4>
+                    <p class="card-text">{{ user.email }}</p>
                     <button type="button" class="btn btn-primary">Add</button>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <ng-template #loggedOutBlock>

@@ -2,7 +2,7 @@
     <div class="container">
         <p class="h2 mb-3 bg-blue" style="color: darkmagenta">User Profile</p>
         <div class="float-right">
-            <button class="btn-primary ">Edit</button>
+            <button class="btn-primary " (click)=EditProfile(user.id)>Edit</button>
             <button class="btn-primary ">Address</button>
             <button class="btn-primary ">Payment</button>
         </div>
@@ -11,14 +11,31 @@
         <div class="card-header ">
             <img src="https://via.placeholder.com/150 " alt=" " />
         </div>
-        <div class="card-body " style="width: 18rem ">
-            <h4 class="card-title ">{{ user.name }}</h4>
-            <p class="card-text ">{{ user.id }}</p>
-            <p class="card-text ">{{ user.email }}</p>
-            <p class="card-text ">{{ user.created_at | date }}</p>
+        <div class="card-body " style="width: 18rem " *ngIf="!edit">
+            <h4 class="card-title "> Name : {{ user.name }}</h4>
+            <p class="card-text "> Id : {{ user.id }}</p>
+            <p class="card-text "> Email : {{ user.email }}</p>
+            <p class="card-text "> Created at : {{ user.created_at | date }}</p>
         </div>
 
+        <form>
+            <div class="card-body " style="width: 50rem " *ngIf="edit">
+                <h4 class="card-title "> Name : <input type="text" [value]="user.name"> </h4>
+                <p class="card-text "> Id- {{ user.id }}</p>
+                <p class="card-text "> Email : <input type="text" [value]="user.email"> </p>
+                <p class="card-text ">{{ user.created_at | date }}</p>
+            </div>
+            <div *ngIf="edit" class="card-footer">
+                <button class="btn-primary" (click)="UpdateProfile(user.id)">
+            Update
+          </button>
+
+            </div>
+        </form>
     </div>
+
+
+
 </div>
 
 <ng-template #loggedOutBlock>
