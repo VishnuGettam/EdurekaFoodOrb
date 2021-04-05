@@ -10,10 +10,17 @@ export class AuthorizeService {
 
 
   login(email: string, password: string) {
+    console.log('Hello from Login');
+    console.log(email);
+
+
     if (this.isloggedIn()) {
       sessionStorage.removeItem('authStatus');
     }
     this._userService.getUsersByEmail(email).subscribe((users) => {
+      console.log('Final');
+      console.log(users[0].email);
+      console.log(users[0].pasword);
       if (password == users[0].password) {
 
         sessionStorage.setItem(

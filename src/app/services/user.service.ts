@@ -22,7 +22,10 @@ export class UserService {
   }
 
   getUsersByEmail(email: string) {
-    return this._httpClient.get<any[]>(this.restAPI + '?email=' + email);
+
+    return this._httpClient.get<any[]>(this.restAPI, {
+      params: { "email":email }
+    })
   }
 
   UpdateUserbyId(id:number,data:any){
