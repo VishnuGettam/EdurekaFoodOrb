@@ -20,13 +20,13 @@
 
         <form>
             <div class="card-body " style="width: 50rem " *ngIf="edit">
-                <h4 class="card-title "> Name : <input type="text" [value]="user.name"> </h4>
+                <h4 class="card-title "> Name : <input type="text" name="userName" [value]="user.name" [(ngModel)]="name"> </h4>
                 <p class="card-text "> Id- {{ user.id }}</p>
-                <p class="card-text "> Email : <input type="text" [value]="user.email"> </p>
+                <p class="card-text "> Email : {{user.email}} </p>
                 <p class="card-text ">{{ user.created_at | date }}</p>
             </div>
             <div *ngIf="edit" class="card-footer">
-                <button class="btn-primary" (click)="UpdateProfile(user.id)">
+                <button class="btn-primary" (click)="UpdateProfile(user)">
             Update
           </button>
 
