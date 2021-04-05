@@ -7,12 +7,15 @@
         <div class="row mb-4" *ngFor="let order of orders">
             <div class="card flex-row flex-wrap w-100">
                 <div class="card-header">
-                    <img src="https://via.placeholder.com/150" alt="" />
+                    <h5 class="card-title text-light bg-dark">{{ order.restaurentname }}</h5>
+                    <!-- <img [src]={{ order.imageurl }} alt="" /> -->
+                    <img class="card-img-top" style="width: 150px;height: 150px;" src="{{ order.imageurl }}" />
+
                 </div>
                 <div class="card-body" style="width: 18rem">
-                    <h4 class="card-title">{{ order.id }}</h4>
-                    <p class="card-text">{{ order.amount }}</p>
-                    <a class="btn btn-primary" routerLink="/orders/{{ order.id }}" role="button">View</a
+                    <h4 class="card-title">{{ order.ordername }}</h4>
+                    <p class="card-text">{{ order.amount | currency:'INR'}}</p>
+                    <a class="btn btn-primary" routerLink="/orders/{{ order.id }}" role="button">View Complete Order</a
           >
         </div>
       </div>

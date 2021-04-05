@@ -1,14 +1,55 @@
 <div *ngIf="authStatus['status']; else loggedOutBlock" class="jumbotron">
     <div class="card flex-row flex-wrap w-100">
         <div class="card-header">
-            <img src="https://via.placeholder.com/150" alt="" />
+            <img class="card-img-top" style="width: 150px;height: 150px;" src="{{ order.imageurl }}" />
         </div>
         <div class="card-body" style="width: 18rem">
-            <h4 class="card-title">Listing ID: {{ order.listing_id }}</h4>
+            <h4 class="card-title">Restaurant: {{ order.restaurentname }}</h4>
             <p class="card-text">Quantity: {{ order.quantity }}</p>
-            <p class="card-text">Amount: {{ order.amount }}</p>
+            <p class="card-text">Name: {{ order.ordername }}</p>
+            <p class="card-text">Amount: {{ order.amount | currency:'INR' }}</p>
+        </div>
+        <div>
+            <button class="btn-primary" (click)='PlaceOrder(order.id)' *ngIf="displayOrder">
+          Place Order
+        </button>
         </div>
     </div>
+    <br>
+    <div class="card flex-row flex-wrap w-100" *ngIf="!displayOrder">
+        <div class="card-header">
+            <h4 class="card-title" style="color:indianred;">
+                Order # {{order.id}} - <span style=" font-size: x-large ;color:darkgreen"> {{orderStatus}} </span>
+                <span [ngStyle]="{ 'display':timeLeft == 0 ? 'none':'block' }"> ({{timeLeft}} sec)</span>
+            </h4>
+
+
+            <!-- <p class="float-md-right">{{timeLeft}} Seconds Left....</p> -->
+
+            <div class="container ">
+                <ol class="wizard-progress clearfix">
+                    <li id="placed" class="active-step">
+                        <span class="step-name">
+                         Placed
+                    </span>
+                        <span class="visuallyhidden">Step </span><span class="step-num">1</span>
+                    </li>
+                    <li id="picked" [ngClass]="{'active-step': orderpick}">
+                        <span class="step-name">Picked up</span>
+                        <span class="visuallyhidden">Step </span><span class="step-num">2</span>
+                    </li>
+                    <li id="delivered" [ngClass]="{'active-step': orderdelivered}">
+                        <span class="step-name">Delivered</span>
+                        <span class="visuallyhidden">Step </span><span class="step-num">3</span>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+
 </div>
 
 <ng-template #loggedOutBlock>
