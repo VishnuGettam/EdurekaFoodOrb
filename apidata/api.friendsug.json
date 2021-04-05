@@ -6,8 +6,7 @@
         "email_verified_at": null,
         "created_at": "2020-04-26T17:02:45.000000Z",
         "updated_at": "2020-04-27T15:05:19.000000Z",
-        "api_token": null,
-        "isadmin": false
+        "api_token": null
     },
     {
         "id": 2,
@@ -17,8 +16,7 @@
         "email_verified_at": null,
         "created_at": "2020-04-26T17:02:45.000000Z",
         "updated_at": "2020-04-27T15:05:19.000000Z",
-        "api_token": null,
-        "isadmin": false
+        "api_token": null
     },
     {
         "id": 3,
@@ -28,19 +26,17 @@
         "email_verified_at": null,
         "created_at": "2020-04-26T17:02:45.000000Z",
         "updated_at": "2020-04-27T15:05:19.000000Z",
-        "api_token": null,
-        "isadmin": false
+        "api_token": null
     },
     {
         "id": 4,
-        "name": "Prasad",
-        "email": "prasad@gmail.com",
+        "name": "Cherry",
+        "email": "Cherry@gmail.com",
         "password": "test",
         "email_verified_at": null,
         "created_at": "2020-04-26T17:02:45.000000Z",
         "updated_at": "2020-04-27T15:05:19.000000Z",
-        "api_token": null,
-        "isadmin": true
+        "api_token": null
     }
 
 ]

@@ -39,7 +39,8 @@ export class UserService {
         "email_verified_at": null,
         "created_at": "2020-04-26T17:02:45.000000Z",
         "updated_at": new Date(),
-        "api_token": null
+        "api_token": null,
+        "isadmin":false
     })
   }
 

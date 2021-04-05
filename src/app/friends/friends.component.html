@@ -19,7 +19,7 @@
     </div>
     <br>
     <div class="container">
-        <p class="h2 mb-3">Find friends</p>
+        <p class="h2 mb-3"> Friend Suggestions</p>
     </div>
     <div class="container">
         <div class="row mb-4" *ngFor="let user of users">
@@ -30,7 +30,7 @@
                 <div class="card-body" style="width: 18rem">
                     <h4 class="card-title">{{ user.name }}</h4>
                     <p class="card-text">{{ user.email }}</p>
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-primary" (click)="AddFriends(user)">Add</button>
                 </div>
             </div>
         </div>
